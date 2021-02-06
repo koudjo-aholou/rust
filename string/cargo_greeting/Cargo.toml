@@ -1,0 +1,10 @@
+[package]
+name = "cargo_greeting"
+version = "0.1.0"
+authors = ["Koudjo AHOLOU <ah.koudjo@gmail.com>"]
+edition = "2018"
+description = "Premier cargo"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
