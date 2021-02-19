@@ -27,3 +27,7 @@
 > //  # The library shouldn't decide about the exact versions of 
 > //  # its dependencies, but let the downstream crate decide.
 >  Cargo.lock
+
+##Tools
+..* The Rust community’s crate registry : https://crates.io/
+..* Linter : https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
