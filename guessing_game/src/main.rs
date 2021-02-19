@@ -22,7 +22,10 @@ loop{
     // & indicates that this argument is a reference,  references are immutable by default
     .expect("Echec, impossible de lire la ligne");
 
-    let guess: u32 = guess.trim().parse().expect("Svp saississez un numéro!"); // Rust allows us to shadow the previous value of guess 
+    let guess: u32 =  match guess.trim().parse() {
+        Ok(num) => num,
+        Err(_) => continue,
+    }; // Rust allows us to shadow the previous value of guess 
 
     println!("Votre supposition : {}", guess);
     // The cmp method compares two values and can be called on anything that can be compared
