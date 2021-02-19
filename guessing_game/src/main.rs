@@ -9,7 +9,7 @@ fn main() {
     let secret_number = rand::thread_rng().gen_range(1.. 101);
 
     println!("Le numero secret est : {}", secret_number);
-
+loop{
     println!("Svp saisissez un numéro.");
     // The :: syntax in the ::new line indicates that new is an associated function of the String type.
     // associated function is implemented on a type. Create new empty string  static method.
@@ -29,6 +29,11 @@ fn main() {
     match guess.cmp(&secret_number) {
         Ordering::Less => println!("Trop petit!"),
         Ordering::Greater => println!("Trop Grand!"),
-        Ordering::Equal => println!("Vous avez gagne!"),
+        Ordering::Equal => {
+            println!("Vous avez gagne!");
+            break;
+        } 
     }
+}
+
 }
