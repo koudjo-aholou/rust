@@ -1,5 +1,6 @@
 // io (input/output) library into scope
 use std::io;
+use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
@@ -7,9 +8,9 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1.. 101);
 
-    println!("The secret number is: {}", secret_number);
+    println!("Le numero secret est : {}", secret_number);
 
-    println!("Svp saisissez un numero.");
+    println!("Svp saisissez un numéro.");
     // The :: syntax in the ::new line indicates that new is an associated function of the String type.
     // associated function is implemented on a type. Create new empty string  static method.
 
@@ -21,5 +22,13 @@ fn main() {
     // & indicates that this argument is a reference,  references are immutable by default
     .expect("Echec, impossible de lire la ligne");
 
+    let guess: u32 = guess.trim().parse().expect("Svp saississez un numéro!"); // Rust allows us to shadow the previous value of guess 
+
     println!("Votre supposition : {}", guess);
+    // The cmp method compares two values and can be called on anything that can be compared
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Trop petit!"),
+        Ordering::Greater => println!("Trop Grand!"),
+        Ordering::Equal => println!("Vous avez gagne!"),
+    }
 }
