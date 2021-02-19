@@ -8,7 +8,7 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1.. 101);
 
-    println!("Le numero secret est : {}", secret_number);
+  //  println!("Le numero secret est : {}", secret_number);
 loop{
     println!("Svp saisissez un numéro.");
     // The :: syntax in the ::new line indicates that new is an associated function of the String type.
